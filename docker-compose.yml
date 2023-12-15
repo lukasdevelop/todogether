@@ -1,0 +1,23 @@
+version: '3'
+services:
+  node-app:
+    build:
+      context: ./docker
+      dockerfile: node.Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/app
+    depends_on:
+      - postgres-db
+  
+  postgres-db:
+    build:
+      context: ./docker
+      dockerfile: postgres.Dockerfile
+    environment:
+      - POSTGRES_USER=lucasamaral
+      - POSTGRES_PASSWORD=todogetherpass
+      - POSTGRES_DB=todogetherdb
+    ports:
+      - "5432:5432"
