@@ -3,11 +3,12 @@ name: Node.js Package
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout Repository
       - uses: actions/checkout@v2
