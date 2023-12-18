@@ -42,4 +42,4 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@ec2-54-236-226-211.compute-1.amazonaws.com "cd /home/ec2-user/todogether && git pull && docker-compose up -d && docker exec -it todogether-node-app-1 /bin/bash -c 'npm install'"
+          ssh -o StrictHostKeyChecking=no ec2-user@ec2-54-236-226-211.compute-1.amazonaws.com "cd /home/ec2-user/todogether && git pull && docker-compose up -d && docker exec todogether-node-app-1 /bin/bash -c 'npm install'"
