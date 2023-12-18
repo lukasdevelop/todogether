@@ -5,7 +5,7 @@ dotenv.config()
 const app = express()
 
 app.get('/', (req, res) => {
-    res.send('Teste de mudança')
+    res.send('Primeiro teste de deploy automatizado!')
 })
 
 app.listen(process.env.PORT || 3000, () => {
