@@ -42,6 +42,6 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@ec2-34-226-248-141.compute-1.amazonaws.com "cd /home/ec2-user/todogether && git pull && docker-compose up -d"
+          ssh -o StrictHostKeyChecking=no ec2-user@ec2-54-236-226-211.compute-1.amazonaws.com "cd /home/ec2-user/todogether && git pull && docker-compose up -d"
   
 
