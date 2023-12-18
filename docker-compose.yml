@@ -2,7 +2,7 @@ version: '3'
 services:
   node-app:
     build:
-      context: ./docker
+      context: ./
       dockerfile: node.Dockerfile
     ports:
       - "3000:3000"
@@ -13,7 +13,7 @@ services:
   
   postgres-db:
     build:
-      context: ./docker
+      context: ./
       dockerfile: postgres.Dockerfile
     environment:
       - POSTGRES_USER=lucasamaral
