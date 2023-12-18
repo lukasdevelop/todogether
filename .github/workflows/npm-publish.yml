@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Dependencies
+      - name: Install Dependencies Locally
         run: npm install
         working-directory: ./app
 
@@ -43,5 +43,7 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ec2-user@ec2-54-236-226-211.compute-1.amazonaws.com "cd /home/ec2-user/todogether && git pull && docker-compose up -d"
-  
 
+      - name: Install Dependencies in Docker Container
+        run: |
+          ssh -o StrictHostKeyChecking=no ec2-user@ec2-54-236-226-211.compute-1.amazonaws.com "cd /home/ec2-user/todogether && docker-compose exec todogether-node-app-1 npm install"
